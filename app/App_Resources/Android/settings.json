@@ -1,0 +1,5 @@
+{
+  "appId": "com.reddoware.*",
+  "minSdkVersion": 23,
+  "targetSdkVersion": 26
+}

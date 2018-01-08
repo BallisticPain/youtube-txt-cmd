@@ -1,0 +1,32 @@
+<ActionBar title="YouTube Txt Cmd" class="action-bar"></ActionBar>
+
+<ScrollView class="page">
+	<FlexboxLayout id="main-panel">
+		<SearchBar hint="Search on YouTube..." [text]="searchPhrase" (submit)="onSearchSubmit($event)"></SearchBar>
+		<Label textWrap="true" text="This is a command driven video player for YouTube. Similar to old DnD games, or a 2D paintball game (like I used to play). You 'must' type commands to interact..."
+		 class="h2 description-label"></Label>
+		<YoutubePlayer #vplayer id="player" apiKey="{{searchApiKey}}" src="{{src}}" options="{{playerOptions}}" height="270" width="100%" backgroundColor="gray"></YoutubePlayer>
+		<FlexboxLayout id="cmd-area">
+			<TextField 
+				id="cmd-input"
+				autocomplete="false"
+				autocapitalizationType="none"
+				[(ngModel)]="command"
+				hint="Type command..."
+				returnKeyType="go"
+				(returnPress)="onGoTap()">
+			</TextField>
+			<Button id="cmd-send-button" text="Go" (tap)="onGoTap()"></Button>
+			<Button id="cmd-help-button" text="?" (tap)="onHelpTap()"></Button>
+		</FlexboxLayout>
+		<ListView id="video-list" class="list-group" [items]="videoResults" (itemTap)="onItemTap($event)">
+			<ng-template let-video="item" let-i="index">
+				<GridLayout columns="auto, auto, *" class="list-group-item">
+					<Label [text]="i" col=0 class="video-index"></Label>
+					<Image [src]="video.image.url" col=1 class="thumb img-circle"></Image>
+					<Label [text]="video.title" col=2 class="list-group-item-heading"></Label>
+				</GridLayout>
+			</ng-template>
+		</ListView>
+	</FlexboxLayout>
+</ScrollView>

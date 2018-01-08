@@ -1,0 +1,62 @@
+#cmd-area {
+  flex-grow: 0;
+  flex-direction: row;
+  font-size: 22;
+  margin: 15;
+}
+
+#cmd-input {
+  border: 1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: darkorchid;
+}
+
+#cmd-send-button {
+  flex-grow: 2;
+  background-color: plum;
+  margin-left: 5;
+  margin-right: 5;
+  color: green;
+}
+
+#cmd-help-button {
+  flex-grow: 1;
+  background-color: orange;
+  color: red;
+}
+
+.description-label{
+  font-size: 15;
+  margin: 15;
+}
+
+.video-index {
+  flex-grow: 0;
+  margin-right: 15;
+  width: 5%;
+}
+
+.thumb {
+  flex-grow: 0;
+  width: 10%;
+}
+
+.list-group-item-heading {
+  flex-grow: 0;
+  margin-left: 15;
+}
+
+.list-group {
+  flex-grow: 5;
+  min-height: 64;
+}
+
+#main-panel {
+  flex-direction: column;
+}
+
+SearchBar {
+  vertical-align: top;
+  margin: 0;
+  flex-grow: 0;
+}
